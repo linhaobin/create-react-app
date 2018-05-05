@@ -367,3 +367,15 @@ module.exports = {
     child_process: 'empty',
   },
 };
+
+// @remove-on-eject-begin
+
+// rewired webpack config
+const rewired = require('./utils/rewired');
+module.exports = rewired(
+  paths.customWebpackConfig,
+  module.exports,
+  'production'
+);
+module.exports = rewired(paths.customWebpackProdConfig, module.exports);
+// @remove-on-eject-end

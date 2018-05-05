@@ -83,6 +83,10 @@ module.exports = {
   // These properties only exist before ejecting:
   ownPath: resolveOwn('.'),
   ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
+  // rewired webpack config
+  customWebpackConfig: resolveApp('config/webpack.config.js'),
+  customWebpackDevConfig: resolveApp('config/webpack.config.dev.js'),
+  customWebpackProdConfig: resolveApp('config/webpack.config.prod.js'),
 };
 
 const ownPackageJson = require('../package.json');
@@ -113,6 +117,12 @@ if (
     // These properties only exist before ejecting:
     ownPath: resolveOwn('.'),
     ownNodeModules: resolveOwn('node_modules'),
+    // rewired webpack config
+    customWebpackConfig: resolveOwn('template/config/webpack.config.js'),
+    customWebpackDevConfig: resolveOwn('template/config/webpack.config.dev.js'),
+    customWebpackProdConfig: resolveOwn(
+      'template/config/webpack.config.prod.js'
+    ),
   };
 }
 // @remove-on-eject-end

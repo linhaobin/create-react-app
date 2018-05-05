@@ -285,3 +285,15 @@ module.exports = {
     hints: false,
   },
 };
+
+// @remove-on-eject-begin
+
+// rewired webpack config
+const rewired = require('./utils/rewired');
+module.exports = rewired(
+  paths.customWebpackConfig,
+  module.exports,
+  'development'
+);
+module.exports = rewired(paths.customWebpackDevConfig, module.exports);
+// @remove-on-eject-end
