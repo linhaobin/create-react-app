@@ -101,3 +101,16 @@ module.exports = function(proxy, allowedHost) {
     },
   };
 };
+
+// @remove-on-eject-begin
+const defaultConfig = module.exports;
+
+const requireFile = require('./utils/requireFile');
+
+requireFile(paths.customWebpackDevServerConfig, rewiredConfig => {
+  module.exports = function(proxy, allowedHost) {
+    const config = defaultConfig(proxy, allowedHost);
+    rewiredConfig(config, proxy, allowedHost);
+  };
+});
+// @remove-on-eject-end

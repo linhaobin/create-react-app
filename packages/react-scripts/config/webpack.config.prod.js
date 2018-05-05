@@ -371,11 +371,11 @@ module.exports = {
 // @remove-on-eject-begin
 
 // rewired webpack config
-const rewired = require('./utils/rewired');
-module.exports = rewired(
-  paths.customWebpackConfig,
-  module.exports,
-  'production'
-);
-module.exports = rewired(paths.customWebpackProdConfig, module.exports);
+const requireFile = require('./utils/requireFile');
+requireFile(paths.customWebpackConfig, config => {
+  module.exports = config(module.exports, 'production');
+});
+requireFile(paths.customWebpackProdConfig, config => {
+  module.exports = config(module.exports);
+});
 // @remove-on-eject-end

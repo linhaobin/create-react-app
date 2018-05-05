@@ -87,6 +87,8 @@ module.exports = {
   customWebpackConfig: resolveApp('config/webpack.config.js'),
   customWebpackDevConfig: resolveApp('config/webpack.config.dev.js'),
   customWebpackProdConfig: resolveApp('config/webpack.config.prod.js'),
+  // rewired webpack devServer config
+  customWebpackDevServerConfig: resolveApp('config/webpackDevServer.config.js'),
 };
 
 const ownPackageJson = require('../package.json');
@@ -122,6 +124,10 @@ if (
     customWebpackDevConfig: resolveOwn('template/config/webpack.config.dev.js'),
     customWebpackProdConfig: resolveOwn(
       'template/config/webpack.config.prod.js'
+    ),
+    // rewired webpack devServer config
+    customWebpackDevServerConfig: resolveOwn(
+      'template/config/webpackDevServer.config.js'
     ),
   };
 }
