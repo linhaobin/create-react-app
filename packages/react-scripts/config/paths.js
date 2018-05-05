@@ -89,6 +89,8 @@ module.exports = {
   customWebpackProdConfig: resolveApp('config/webpack.config.prod.js'),
   // rewired webpack devServer config
   customWebpackDevServerConfig: resolveApp('config/webpackDevServer.config.js'),
+  // eslintrc
+  eslintrcPath: resolveApp('.'),
 };
 
 const ownPackageJson = require('../package.json');
@@ -129,6 +131,8 @@ if (
     customWebpackDevServerConfig: resolveOwn(
       'template/config/webpackDevServer.config.js'
     ),
+    // eslintrc
+    eslintrcPath: resolveOwn('template'),
   };
 }
 // @remove-on-eject-end
