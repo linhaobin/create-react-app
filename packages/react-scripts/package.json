@@ -18,7 +18,7 @@
     "utils"
   ],
   "bin": {
-    "react-scripts": "./bin/react-scripts.js"
+    "react-scripts-hb": "./bin/react-scripts-hb.js"
   },
   "dependencies": {
     "autoprefixer": "7.1.6",
